@@ -1,6 +1,7 @@
 from curso import *
 from programa import *
 from Profesor import *
+from edificio import *
 
 #Programa principal
 """Autores:-    
@@ -171,7 +172,35 @@ while digito<=3:
                         elif numero==2:
                             pass #delete profesores
                         elif numero==3:
+                            print("\t ADMINISTRAR EDIFICIOS")
+                            while (numero <= 2):
+                                    print("\t MENU")
+                                    print("1. Registrar nuevos edificios")
+                                    print("2. Eliminar edificios")
+                                    print("3. Buscar edificios")
+                                    print("4. SALIR")
+                                    numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+
+                                    if numero==1:
+                                        print("\t Registrar edificios")
+                                        Edificio.registrar_edificio()
+                                    
+                                    elif numero==2:
+                                        print("\t Eliminar edificios")
+                                        Edificio.elimninar_edificio()
+                                    
+                                    elif numero==3:
+                                        print("\t Buscar edificios")
+                                        Edificio.buscar_edificio()
+                                    
+                                    elif numero==4:
+                                        break
+
+                        elif numero==4:
+                            pass
+                        elif numero==5:
                             break
+
 
             elif numero == 4:
                 break

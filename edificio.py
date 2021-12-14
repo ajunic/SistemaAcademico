@@ -1,6 +1,8 @@
 from  aula import *
+
 class Edificio:
-    
+    listEdificio = []
+
     def __init__(self, nombre_edificio, direccion, cantidad_pisos, cantidad_aulas):
         self.__nombre_edificio = nombre_edificio
         self.__direccion = direccion
@@ -8,29 +10,46 @@ class Edificio:
         self.__cantidad_aulas = cantidad_aulas
         self.__aulas = Aula() #relacion de composicion
 
-        def agregar_aula():
-            self.__aulas.append(Aula())
+    def agregar_aula():
+        self.__aulas.append(Aula())
 
-        def eliminar_aula():
-            self.__aulas.pop()
+    def eliminar_aula():
+        self.__aulas.pop()
 
-        def buscar_aula():
-            self.__aulas.index(Aula())
+    def buscar_aula():
+        self.__aulas.index(Aula())
 
+
+    def modificar_aula():
+        self.__aulas.remove(Aula())
     
-        def modificar_aula():
-            self.__aulas.remove(Aula())
-    
-        def listar_aulas():
-            return self.__aulas
+    def listar_aulas():
+        return self.__aulas
             
+    def registrar_edificio():
+        print("Registrar edificio\n")
+        nombre_edificio = input("Ingrese el nombre del edificio: ")
+        direccion = input("Introduzca la direccion del edificio: ")
+        cantidad_pisos = int(input("Ingrese la cantidad de pisos que contiene: "))
+        cantidad_aulas = int(input("Ingrese la cantidad de aulas que contiene: "))
+        objEdificio = Edificio(nombre_edificio, direccion, cantidad_pisos, cantidad_aulas)
+        Edificio.listEdificio.append(objEdificio)
+
+    def elimninar_edificio():
+        print("Eliminar edificio\n")
+        borrar = input("Escriba el nombre del edificio que desea eliminar: ")
+        bo = Edificio.listEdificio.pop(borrar)
+        print("-------------------")
+        print("------------------------")
+        print("Se ha eliminado con exito")
     
-        def administrar_Edificio():
-            pass #queda a criterio ,return NONE
-                       
-   
-
-
+    def buscar_edificio():
+        print("Buscar edificio\n")
+        buscar = input("Escriba el nombre del edificio que desea encontrar: ")
+        bu = Edificio.listEdificio.index(buscar)
+        print("-------------------")
+        print("Buscando------------------------")
+        print(f"El edificio que busca se encuentra en: {bu}")
 
     #Defining Getters and Setters
     def get_nombre_edificio(self):
@@ -58,5 +77,4 @@ class Edificio:
     cantidad_aulas = property(get_cantidad_aulas, get_cantidad_aulas)
 
 
-    def administrar_Edificio(): #Devolvera None
-        pass
+
