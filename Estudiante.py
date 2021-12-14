@@ -4,10 +4,10 @@ from Persona import Persona
 class Estudiante(Persona):
 
     contador_estudiante = 0
-    __listaEstudiantes = []
+    listaEstudiantes = []
 
     def __init__(self, tipo, nombre, apellido, cedula, direccion, telefono,
-                 fecha_nacimiento, email, num_carnet, obj_matricula):
+                 fecha_nacimiento, email, num_carnet, obj_matricula = []):
         Estudiante.contador_estudiante += 1
         super().__init__(tipo, nombre, apellido, cedula, direccion,
                          telefono, fecha_nacimiento, email)
@@ -21,6 +21,27 @@ class Estudiante(Persona):
         #Matricula: {self.obj_matricula}]
         \t{super().__str__()}
         """
+
+    #Método para registrar un nuevo estudiante
+    def registrarEstudiante():
+        print('Registro de estudiante\n')
+        tipo = input('Ingrese el tipo de estudiante: ')
+        nombre = input('Ingrese nombre: ')
+        apellido = input('Ingrese apellido: ')
+        cedula = input('Ingrese cedula: ')
+        direccion = input('Ingrese direccion: ')
+        telefono = input('Ingrese el telefono: ')
+        fecha_nac = input('Ingrese fecha de nacimiento: ')
+        email = input('Ingrese email: ')
+        num_carnet = input('Ingrese numero de carnet: ')
+
+        objetoEstudiente = Estudiante(tipo, nombre, apellido, cedula, direccion, telefono, fecha_nac, email, num_carnet)
+        Estudiante.listaEstudiantes.append(objetoEstudiente)
+
+    def mostrar_estudiantes():
+        for i in Estudiante.listaEstudiantes:
+            print(i)
+
 
     # define setter and getter methods for Estudiante attributes
     def get_num_carnet(self):
