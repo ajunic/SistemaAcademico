@@ -1,2 +1,2 @@
-# trabajo6
-Trabajo Python clases
+# SistemaAcademico
+Trabajo 6 Python clases

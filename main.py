@@ -2,6 +2,7 @@ from curso import *
 from programa import *
 from Profesor import *
 from edificio import *
+from Estudiante import *
 
 #Programa principal
 """Autores:-    
@@ -144,17 +145,22 @@ while digito<=3:
                 print("\t ADMINISTRAR ESTUDIANTES")
                 while (numero<=2):
                         print("\t MENU")
-                        print("1.MOSTRAR ESTUDIANTES:")
-                        print("2.ELIMINAR ESTUDIANTES:")
-                        print("3. SALIR")
+                        print("1. REGISTRAR ESTUDIANTES:")
+                        print("2. MOSTRAR ESTUDIANTES:")
+                        print("3. ELIMINAR ESTUDIANTES:")
+                        print("4. SALIR")
                         numero=int(input("Ingrese el numero de servicios que desea verificar: "))
 
                         if numero==1:
-                            pass #metodo para mostrar profesores
+                            Estudiante.registrarEstudiante()
+                            pass #metodo para registrar estudiantes
                         elif numero==2:
-                            pass #delete profesores
+                            Estudiante.mostrar_estudiantes()
+                            pass #mostrar estudiantes
                         elif numero==3:
-                            break
+                            pass #eliminar estudiantes
+                        elif numero == 4:
+                            break #salir
 
             elif numero==3:
                 print("\t ADMINISTRAR CATALOGOS")

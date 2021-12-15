@@ -118,10 +118,10 @@ class Programa:
 
 
 
-ing1 =Programa("ingenieria_Civil", "12/12/12", "activo", "Juan", ["Calculo2", "fisica"])
-ing2= Programa("Arquitectura", "12/15/16", "activo", "Juan")
-cur1=Curso("Calculo4", 5, 20,"Ingenieria civil",90)
+# ing1 =Programa("ingenieria_Civil", "12/12/12", "activo", "Juan", ["Calculo2", "fisica"])
+# ing2= Programa("Arquitectura", "12/15/16", "activo", "Juan")
+# cur1=Curso("Calculo4", 5, 20,"Ingenieria civil",90)
 
-print(ing1.director)
+# print(ing1.director)
 
-print(ing2.__dict__)
+# print(ing2.__dict__)
