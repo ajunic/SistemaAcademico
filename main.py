@@ -3,6 +3,7 @@ from programa import *
 from Profesor import *
 from edificio import *
 from Estudiante import *
+from aula import *
 
 #Programa principal
 """Autores:-    
@@ -203,7 +204,29 @@ while digito<=3:
                                         break
 
                         elif numero==4:
-                            pass
+                            print("\t ADMINISTRAR AULAS")
+                            while (numero <= 2):
+                                    print("\t MENU")
+                                    print("1. Registrar nuevas aulas")
+                                    print("2. Eliminar aulas")
+                                    print("3. Buscar aulas")
+                                    print("4. SALIR")
+                                    numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+
+                                    if numero==1:
+                                        print("\t Registrar aulas")
+                                        Aula.registrar_aula()
+                                    
+                                    elif numero==2:
+                                        print("\t Eliminar aulas")
+                                        Aula.elimninar_aula()
+                                    
+                                    elif numero==3:
+                                        print("\t Buscar aula")
+                                        Aula.buscar_aula()
+                                    
+                                    elif numero==4:
+                                        break
                         elif numero==5:
                             break
 
