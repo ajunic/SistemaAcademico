@@ -1,5 +1,3 @@
-from  aula import *
-
 class Edificio:
     listEdificio = []
 
@@ -8,24 +6,7 @@ class Edificio:
         self.__direccion = direccion
         self.__cantidad_pisos = cantidad_pisos
         self.__cantidad_aulas = cantidad_aulas
-        self.__aulas = Aula() #relacion de composicion
 
-    def agregar_aula():
-        self.__aulas.append(Aula())
-
-    def eliminar_aula():
-        self.__aulas.pop()
-
-    def buscar_aula():
-        self.__aulas.index(Aula())
-
-
-    def modificar_aula():
-        self.__aulas.remove(Aula())
-    
-    def listar_aulas():
-        return self.__aulas
-            
     def registrar_edificio():
         print("Registrar edificio\n")
         nombre_edificio = input("Ingrese el nombre del edificio: ")
