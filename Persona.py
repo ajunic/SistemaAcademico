@@ -34,6 +34,30 @@ class Persona:#superclase
     #def crear_persona(self):
     #    return Persona(self.nombre, self.apellido, self.cedula, self.direccion, self.telefono, self.email, self.fecha_nacimiento)
 
+    def elimninar_persona():
+        print("Eliminar persona\n")
+        borrar = input("Escriba el nombre de la persona que desea eliminar: ")
+        bo = Persona.listaPersona.pop(borrar)
+        print("-------------------")
+        print("------------------------")
+        print("Se ha eliminado con exito")
+    
+    def buscar_persona():
+        print("Buscar Persona\n")
+        buscar = input("Escriba el nombre de la persona que desea encontrar: ")
+        bu = Persona.listaPersona.index(buscar)
+        print("-------------------")
+        print("Buscando------------------------")
+        print(f"El edificio que busca se encuentra en: {bu}")
+    
+    def modificar_persona():
+        print("Modificar persona\n")
+        numi = int(input("Ingrese el indice que desea modificar: "))
+        print(Persona.listaPersona[: numi])
+        modi = input("Ingrese la modificacion que desea realizar: ")
+        Persona.listaPersona[:numi] = [modi]
+        print(Persona.listaPersona)
+
     # define setter and getter methods for nombre
     def get_nombre(self):
         return self.__nombre
