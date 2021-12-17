@@ -169,7 +169,7 @@ while digito<=4:
 
             elif numero==3:
                 print("\t ADMINISTRAR CATALOGOS")
-                while (numero <= 6):
+                while (numero <= 7):
                         print("\t MENU")
                         print("1. Cursos")
                         print("2. Tipos de profesores")
@@ -307,7 +307,7 @@ while digito<=4:
                                 
                         elif numero ==6:
                             #Administrar programas que contienen cursos para la clase analitics
-                            print("\t ADMINISTRAR TURNOS")
+                            print("\t ADMINISTRAR PROGRAMAS")
                             while (numero <= 4):
                                 print("\t MENU")
                                 print("1. Crear programa")

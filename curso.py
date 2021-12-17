@@ -6,7 +6,7 @@ class Curso:
     lista_curso = []
 
     def __init__(self, nombre_curso, creditos, horas_semanales, 
-    programa, nota, aulas):
+    programa, nota, aulas,precio):
 
         Curso.contador_curso += 1
         self.__nota = nota  # agregada para punto 7
@@ -16,6 +16,7 @@ class Curso:
         self.__programa = programa
         self.__aulas = list(aulas)
         self.__id_curso = Curso.contador_curso
+        self.__precio= precio
 
     def __str__(self):
         return f"""\nCurso[
