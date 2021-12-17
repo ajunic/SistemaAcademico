@@ -42,6 +42,31 @@ class Estudiante(Persona):
         for i in Estudiante.listaEstudiantes:
             print(i)
 
+    def elimninar_estudiante():
+        print("Eliminar estudiante\n")
+        borrar = input("Escriba el nombre del estudiante que desea eliminar: ")
+        bo = Estudiante.listaEstudiantes.pop(borrar)
+        print("-------------------")
+        print("------------------------")
+        print("Se ha eliminado con exito")
+    
+    def buscar_estudiante():
+        print("Buscar Estudiante\n")
+        buscar = input("Escriba el nombre del estudiante que desea encontrar: ")
+        bu = Estudiante.listaEstudiantes.index(buscar)
+        print("-------------------")
+        print("Buscando------------------------")
+        print(f"El edificio que busca se encuentra en: {bu}")
+    
+    def modificar_estudiante():
+        print("Modificar estudiante\n")
+        numi = int(input("Ingrese el indice que desea modificar: "))
+        print(Estudiante.listaEstudiantes[: numi])
+        modi = input("Ingrese la modificacion que desea realizar: ")
+        Estudiante.listaEstudiantes[:numi] = [modi]
+        print(Estudiante.listaEstudiantes)
+
+
 
     # define setter and getter methods for Estudiante attributes
     def get_num_carnet(self):
