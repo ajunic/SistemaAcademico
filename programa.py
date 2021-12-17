@@ -5,13 +5,14 @@ descuento=0
 
 class Programa:
     
-    def __init__(self,  nombre_programa, fecha_creacion_programa, status_programa, director,duracion ,curso=[]):
+    def __init__(self,  nombre_programa, fecha_creacion_programa, status_programa, director,duracion,curso ,cursos=[]):
         self.__nombre_programa = nombre_programa
         self.__fecha_creacion_programa = fecha_creacion_programa
         self.__status_programa = status_programa #status_programa = 0
         self.__director = director
         self.__duracion = duracion
-        self.__curso=[] #agregacion
+        self.__cursos=[] #agregacion
+        self.obj_Curso=curso
         
 
            
@@ -73,15 +74,14 @@ class Programa:
     def main():
         pass
     
-    def __eq__ (self, other):
+    def descuento(self ):
         """ Comprobar la duracion y aplicar descuento"""
         
         if self.__duracion == 5:
-            precio_descuento= 0.9* other.precio
-        
+            return self.obj_precio_curso() * 0.1
+
         elif self.__duracion==4:
-            precio_descuento=0.95* other.precio
-    
+            return self.obj_precio_curso() * 0.15  
         
 
     def amdministrar_programa(self, op):
@@ -130,11 +130,6 @@ class Programa:
 
 
 
-
-ing1 =Programa("ingenieria_Civil", "12/12/12", "activo", "Juan",10, ["Calculo2", "fisica"])
-ing2= Programa("Arquitectura", "12/15/16", "activo", "Juan","10")
-cur1=Curso("Calculo4", 5, 20,"Ingenieria civil",90)
-
-print(ing1.director)
-
-print(ing2.__dict__)
+curso1=Curso(1,"Python","Curso de Python","10/10/2019",10,10)
+ingenieria=Programa("Ingenieria","12 50","Activo", "Juan", 5,5 ,["Python","Java","C++"])
+print(ingenieria.descuento())

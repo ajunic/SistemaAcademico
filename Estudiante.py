@@ -7,13 +7,16 @@ class Estudiante(Persona):
     listaEstudiantes = []
 
     def __init__(self, tipo, nombre, apellido, cedula, direccion, telefono,
-                 fecha_nacimiento, email, num_carnet, obj_matricula = []):
+                 fecha_nacimiento, email, num_carnet, nota, obj_matricula = []):
         Estudiante.contador_estudiante += 1
         super().__init__(tipo, nombre, apellido, cedula, direccion,
                          telefono, fecha_nacimiento, email)
         self.num_carnet = num_carnet
         self.obj_matricula = obj_matricula
         self.__id_estudiante = Estudiante.contador_estudiante
+        self.__nota= int(nota)
+        self.__precio= int(Curso.__precio)
+        
 
     def __str__(self):
         return f"""\nEstudiante:[ ID: {self.__id_estudiante}
@@ -45,7 +48,7 @@ class Estudiante(Persona):
     def __gt__(self, other):
         """Comparamos nota para aplicar descuento o no"""
         precio_descuento= 0
-        if other.__nota > 90:
+        if self.__nota > 90:
             precio_descuento = 0.9* other.__precio
             return print (f'El precio con descuento es: {precio_descuento}')
 
@@ -57,3 +60,13 @@ class Estudiante(Persona):
         self.__num_carnet = num_carnet
     #Property
     num_carnet = property(get_num_carnet, set_num_carnet)
+
+
+
+#create two objects from Estudiante class.
+objetoEstudiante1 = Estudiante('Estudiante', 'Juan', 'Perez', '123456789', 'Calle 1', '12345678', '12/12/1990', 'asa', '12345', '12345')
+objetoEstudiante2 = Estudiante('Estudiante', 'Pedro', 'Perez', '123456789', 'Calle 1', '12345678', '12/12/1990', 'asa', '12345', '12345')
+
+#use __gt__ method to compare two objects
+objetoEstudiante1 > objetoEstudiante2
+
