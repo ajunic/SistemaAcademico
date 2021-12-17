@@ -79,8 +79,9 @@ class Programa:
         if self.__duracion == 5:
             precio_descuento= 0.9* other.precio
         
-        if self.__duracion==4:
+        elif self.__duracion==4:
             precio_descuento=0.95* other.precio
+    
         
 
     def amdministrar_programa(self, op):

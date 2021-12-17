@@ -16,7 +16,7 @@ class Curso:
         self.__programa = programa
         self.__aulas = list(aulas)
         self.__id_curso = Curso.contador_curso
-        self.__precio= precio
+        self.__precio = precio
 
     def __str__(self):
         return f"""\nCurso[
