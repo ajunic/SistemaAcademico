@@ -1,9 +1,12 @@
+from Estudiante import *
 class Matricula:
+    listamatricula = []
+
     def __init__(self, fecha_matricula, hora_matricula):
         self.__fecha_matricula = fecha_matricula
         self.__hora_matricula = hora_matricula
         
-    
+
     # fechaMatricula
     def getfecha_matricula(self):
         return self.__fecha_matricula
@@ -20,7 +23,6 @@ class Matricula:
 
     # --------------------------------------------------
     def agregar_Curso(curso): #Devolvera None
-        
         pass
 
     def agregar_Nota(nota): #Devolvera Int
