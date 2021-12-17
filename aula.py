@@ -36,6 +36,15 @@ class Aula:
         print("-------------------")
         print("Buscando------------------------")
         print(f"El edificio que busca se encuentra en: {bu}")
+    
+    def modificar_aula():
+        print("Modificar aula\n")
+        numi = int(input("Ingrese el indice que desea modificar: "))
+        print(Aula.listaulas[: numi])
+        modi = input("Ingrese la modificacion que desea realizar: ")
+        Aula.listaulas[:numi] = [modi]
+        print(Aula.listaulas)
+
 
     #Define setter and getter methods.    
     def get_nombre_aula(self):
