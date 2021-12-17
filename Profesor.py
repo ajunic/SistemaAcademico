@@ -46,7 +46,31 @@ class Profesor(Persona):
         for i in Profesor.listaProfesor:
             print(i)
 
-        
+
+    def elimninar_docente():
+        print("Eliminar docente\n")
+        borrar = input("Escriba el nombre del profesor que desea eliminar: ")
+        bo = Profesor.listaProfesor.pop(borrar)
+        print("-------------------")
+        print("------------------------")
+        print("Se ha eliminado con exito")
+    
+    def buscar_docente():
+        print("Buscar Docente\n")
+        buscar = input("Escriba el nombre del profesor que desea encontrar: ")
+        bu = Profesor.listaProfesor.index(buscar)
+        print("-------------------")
+        print("Buscando------------------------")
+        print(f"El edificio que busca se encuentra en: {bu}")
+    
+    def modificar_docente():
+        print("Modificar docente\n")
+        numi = int(input("Ingrese el indice que desea modificar: "))
+        print(Profesor.listaProfesor[: numi])
+        modi = input("Ingrese la modificacion que desea realizar: ")
+        Profesor.listaProfesor[:numi] = [modi]
+        print(Profesor.listaProfesor)
+
     # define setter and getter methods for Estudiante attributes
     def get_codigo_profesor(self):
         return self.__codigo_profesor
