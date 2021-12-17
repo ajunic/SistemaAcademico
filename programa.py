@@ -9,9 +9,6 @@ class Programa:
         self.__director = director
         self.__curso=[] #agregacion
 
-    def registrar_programa():
-        print("Se registro el programa")
-        pass
 
     def __str__(self):
         return self.__curso
@@ -112,6 +109,15 @@ class Programa:
                     obj_programa = Programa(id_programa, nombre_programa, fecha_creacion, status, director)
                     lista_programas.append(obj_programa)
                     print("Programa modificado exitosamente!")
+        
+        if op == 5:
+            print("Eliminar programa\n")
+            borrar = input("Escriba el nombre del programa que desea eliminar: ")
+            bo = lista_programas.pop(borrar)
+            print("-------------------")
+            print("------------------------")
+            print("Se ha eliminado con exito")
+
         else:
             return Programa.main()  #cual es???
 
