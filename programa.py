@@ -2,16 +2,24 @@ from curso import Curso
 import datetime
 lista_programas=[]
 class Programa:
-    def __init__(self,  nombre_programa, fecha_creacion_programa, status_programa, director, curso=[]):
+    def __init__(self,  nombre_programa, fecha_creacion_programa, status_programa, director,duracion ,curso=[]):
         self.__nombre_programa = nombre_programa
         self.__fecha_creacion_programa = fecha_creacion_programa
         self.__status_programa = status_programa #status_programa = 0
         self.__director = director
+        self.__duracion = duracion
         self.__curso=[] #agregacion
 
     def registrar_programa():
         print("Se registro el programa")
-        pass
+        nombre=input("Digite el nombre del programa: ")
+        fecha_creacion=datetime
+        status=input("Digite status si es 'activo' o 'inactivo': ").lower()
+        director=input("Digite el nombre del director: ")
+        duracion= int(input("Digite la duracion del programa: "))
+        obj_programa=Programa(nombre,fecha_creacion,status,director)
+        lista_programas.append(obj_programa)
+        
 
     def __str__(self):
         return self.__curso

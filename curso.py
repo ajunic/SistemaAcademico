@@ -82,14 +82,15 @@ class Curso:
         self.__aulas.append(aula)
 
     # Ver curso con sus aulas
-    def __str__(self) -> str:
+    """def __str__(self) -> str:
         aulas_str = ''
 
         for aula in self.__aulas:
             aulas_str += aula.__str__() + '|'
 
         return f"Curso: {self.__id_curso}, Aulas: {aulas_str}"
-
+    """
+    
     # CrearCurso
     def crear_curso():
         print("Crear curso\n")

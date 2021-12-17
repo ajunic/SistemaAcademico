@@ -176,7 +176,8 @@ while digito<=4:
                         print("3. Edificios")
                         print("4. Aulas")
                         print("5. Turno")
-                        print("6. Salir")
+                        print("6. Programas")
+                        print("7. Salir")
                         numero=int(input("Ingrese el numero del catalogo que desea administrar: "))
 
                         if numero==1:
@@ -303,7 +304,35 @@ while digito<=4:
 
                                 elif numero == 4:
                                     break
+                                
                         elif numero ==6:
+                            #Administrar programas que contienen cursos para la clase analitics
+                            print("\t ADMINISTRAR TURNOS")
+                            while (numero <= 4):
+                                print("\t MENU")
+                                print("1. Crear programa")
+                                print("2. Eliminar programas")
+                                print("3. Buscar programas")
+                                print("4. SALIR")
+                                numero = int(input("Ingrese el numero de servicios que desea verificar: "))
+
+                                if numero == 1:
+                                    print("\t Crear programa")
+                                    Programa.registrar_programa()
+
+
+
+                                elif numero == 2:
+                                    print("\t Eliminar programa")
+
+
+                                elif numero == 3:
+                                    print("\t Buscar Programa")
+
+
+                                elif numero == 4:
+                                    break
+                        elif numero ==7:
                             print("\t Salir de catalogos")
                             break
 
