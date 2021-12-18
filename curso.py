@@ -4,9 +4,10 @@ from aula import *
 class Curso:
     contador_curso = 0
     lista_curso = []
+    aulas=[]
 
     def __init__(self, nombre_curso, creditos, horas_semanales, 
-    programa, nota, aulas,precio):
+    programa, nota,precio):
 
         Curso.contador_curso += 1
         self.__nota = nota  # agregada para punto 7
@@ -14,9 +15,10 @@ class Curso:
         self.__creditos = creditos
         self.__horas_semanales = horas_semanales
         self.__programa = programa
-        self.__aulas = list(aulas)
+        self.__aulas = list(Curso.aulas)
         self.__id_curso = Curso.contador_curso
-        self.__precio = precio
+        self.__precio = int(precio)
+        self.__curso= list(Curso.lista_curso)
 
     def __str__(self):
         return f"""\nCurso[
@@ -26,11 +28,13 @@ class Curso:
         Horas semanales: " {self.__horas_semanales}
         Programa: " + {self.__programa}
         Nota: " {self.__nota}]"""
-
-    def __del__(self):
-        print(
-            f"""Curso: {self.__nombre_curso} {self.__creditos} 
-            {self.__horas_semanales}""")
+    
+    def precio_curso():
+        return Curso.self.__precio
+    #def __del__(self):
+      #  print(
+          #  f"""Curso: {self.__nombre_curso} {self.__creditos} 
+            #{self.__horas_semanales}""")#
 
     # define getter and setter for nombre_curso
     def get_nombre_curso(self):
