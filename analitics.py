@@ -1,59 +1,59 @@
 
 class Analitics:
     def __init__(self,media, moda, mediana, minimo,maximo):
-        self.__media = media
-        self.__moda= moda
-        self.__mediana = mediana
-        self.__minimo = minimo
-        self.__maximo = maximo
+        self._media = media
+        self._moda= moda
+        self._mediana = mediana
+        self._minimo = minimo
+        self._maximo = maximo
 
     def __str__(self):
         return f"""\nAnalitics[
-        Media: {self.__media}
-        Moda: {self.__moda}
-        Mediana: {self.__mediana}
-        Minimo: {self.__minimo}
-        Maximo: {self.__maximo}]"""
+        Media: {self._media}
+        Moda: {self._moda}
+        Mediana: {self._mediana}
+        Minimo: {self._minimo}
+        Maximo: {self._maximo}]"""
 
     def __del__(self):
         print(
-            f"""Analitics: {self.__media} {self.__moda} 
-            {self.__mediana}""")
+            f"""Analitics: {self._media} {self._moda} 
+            {self._mediana}""")
 
     # define getter and setter for media
     def get_media(self):
-        return self.__media
+        return self._media
 
     def set_media(self, media):
-        self.__media = media
+        self._media = media
 
     # define getter and setter for moda
     def get_moda(self):
-        return self.__moda
+        return self._moda
 
     def set_moda(self, moda):
-        self.__moda = moda
+        self._moda = moda
 
     # define getter and setter for mediana
     def get_mediana(self):
-        return self.__mediana
+        return self._mediana
 
     def set_mediana(self, mediana):
-        self.__mediana = mediana
+        self._mediana = mediana
 
     # define getter and setter for minimo
     def get_minimo(self):
-        return self.__minimo
+        return self._minimo
 
     def set_minimo(self, minimo):
-        self.__minimo = minimo
+        self._minimo = minimo
 
     # define getter and setter for maximo
     def get_maximo(self):
-        return self.__maximo
+        return self._maximo
 
     def set_maximo(self, maximo):
-        self.__maximo = maximo
+        self._maximo = maximo
 
     #Proprty definitions for each attribute.
     media = property(get_media, set_media)

@@ -4,44 +4,37 @@ from aula import *
 class Curso:
     contador_curso = 0
     lista_curso = []
-    aulas=[]
 
-    def __init__(self, nombre_curso, creditos, horas_semanales, 
-    programa, nota,precio):
+    def __init__(self, nombre_curso, creditos, horas_semanales, precio):
 
         Curso.contador_curso += 1
-        self.__nota = nota  # agregada para punto 7
-        self.__nombre_curso = nombre_curso
+        self.nombre_curso = nombre_curso
         self.__creditos = creditos
         self.__horas_semanales = horas_semanales
-        self.__programa = programa
-        self.__aulas = list(Curso.aulas)
-        self.__id_curso = Curso.contador_curso
-        self.__precio = int(precio)
-        self.__curso= list(Curso.lista_curso)
+        self.__programa = ''
+        self.__aulas = []#list(aulas)
+        self.__precio = precio
+        self.id_curso = Curso.contador_curso
 
-    def __str__(self):
-        return f"""\nCurso[
-        Id: {self.__id_curso}
-        Nombre del curso: {self.__nombre_curso}
-        Creditos: " {self.__creditos}
-        Horas semanales: " {self.__horas_semanales}
-        Programa: " + {self.__programa}
-        Nota: " {self.__nota}]"""
-    
-    def precio_curso():
-        return Curso.self.__precio
-    #def __del__(self):
-      #  print(
-          #  f"""Curso: {self.__nombre_curso} {self.__creditos} 
-            #{self.__horas_semanales}""")#
+    def nombre_id():
+        print('Seleciona el curso que desea agregar')
+        for i in Curso.lista_curso:
+            print(f'{i.id_curso}. {i.nombre_curso}')
+        
+        # id = int(input())
+
+        # for i in Curso.listar_curso:
+        #     if i.__id_curso == id:
+        #         return i
+
+        
 
     # define getter and setter for nombre_curso
-    def get_nombre_curso(self):
-        return self.__nombre_curso
+    # def get_nombre_curso(self):
+    #     return self.nombre_curso
 
-    def set_nombre_curso(self, nombre_curso):
-        self.__nombre_curso = nombre_curso
+    # def set_nombre_curso(self, nombre_curso):
+    #     self.nombre_curso = nombre_curso
 
     # define getter and setter for creditos
     def get_creditos(self):
@@ -71,12 +64,27 @@ class Curso:
     def set_nota(self, nota):
         self.__nota = nota
 
+    # define getter and setter for precio
+    def get_precio(self):
+        return self.__precio
+
+    def set_precio(self, precio):
+        self.__precio = precio
+
+    def set_id_curso(self, id_curso):
+        self.__id_curso = id_curso
+
+    def get_id_curso(self):
+        return self.__id_curso
+
     # Property definitions for each attribute.
-    nombre_curso = property(get_nombre_curso, set_nombre_curso)
+    #nombre_curso = property(get_nombre_curso, set_nombre_curso)
     creditos = property(get_creditos, set_creditos)
     horas_semanales = property(get_horas_semanales, set_horas_semanales)
     programa = property(get_programa, set_programa)
     nota = property(get_nota, set_nota)
+    precio = property(get_precio, set_precio)
+    id_curso = property(get_id_curso, set_id_curso)
 
     # Mostrar nombre del curso
     def show(self):
@@ -86,26 +94,15 @@ class Curso:
     def agregar_aula(self, aula):  # Devolvera None
         self.__aulas.append(aula)
 
-    # Ver curso con sus aulas
-    """def __str__(self) -> str:
-        aulas_str = ''
-
-        for aula in self.__aulas:
-            aulas_str += aula.__str__() + '|'
-
-        return f"Curso: {self.__id_curso}, Aulas: {aulas_str}"
-    """
-    
     # CrearCurso
     def crear_curso():
-        print("Crear curso\n")
         nombre_curso = input("Ingrese nombre del curso: ")
         creditos = input("Ingrese la cantidad de creditos: ")
         horas_semanales = input("Ingrese la cantidad de horas semanales: ")
-        curso = Curso(nombre_curso=nombre_curso, creditos=creditos,
-                      horas_semanales=horas_semanales, aulas='')
+        precio = input("Ingrese el precio del curso: ")
+        curso = Curso(nombre_curso, creditos, horas_semanales, precio)
 
-        return curso
+        Curso.lista_curso.append(curso)
 
     # EditarCurso
     def editar_curso(curso):
@@ -139,10 +136,9 @@ class Curso:
     def show(self):
         print ("Nombre del curso: ", self.nombre_curso)
 
-    def listar_cursos(lista_curso):
-        for i in range(len(lista_curso)):
-            print(lista_curso[i])
+    def listar_cursos():
+        for i in Curso.lista_curso:
+            print(i)
 
     def administrar_Curso(): #Devolvera None
         pass
-

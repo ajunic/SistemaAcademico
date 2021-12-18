@@ -2,12 +2,12 @@ class Edificio:
     listEdificio = []
 
     def __init__(self, nombre_edificio, direccion, cantidad_pisos, cantidad_aulas):
-        self.__nombre_edificio = nombre_edificio
-        self.__direccion = direccion
-        self.__cantidad_pisos = cantidad_pisos
-        self.__cantidad_aulas = cantidad_aulas
+        self._nombre_edificio = nombre_edificio
+        self._direccion = direccion
+        self._cantidad_pisos = cantidad_pisos
+        self._cantidad_aulas = cantidad_aulas
 
-    def registrar_edificio():
+    def registrar_edificio(self):
         print("Registrar edificio\n")
         nombre_edificio = input("Ingrese el nombre del edificio: ")
         direccion = input("Introduzca la direccion del edificio: ")
@@ -16,7 +16,7 @@ class Edificio:
         objEdificio = Edificio(nombre_edificio, direccion, cantidad_pisos, cantidad_aulas)
         Edificio.listEdificio.append(objEdificio)
 
-    def elimninar_edificio():
+    def eliminar_edificio(self):
         print("Eliminar edificio\n")
         borrar = input("Escriba el nombre del edificio que desea eliminar: ")
         bo = Edificio.listEdificio.pop(borrar)
@@ -24,7 +24,7 @@ class Edificio:
         print("------------------------")
         print("Se ha eliminado con exito")
     
-    def buscar_edificio():
+    def buscar_edificio(self):
         print("Buscar edificio\n")
         buscar = input("Escriba el nombre del edificio que desea encontrar: ")
         bu = Edificio.listEdificio.index(buscar)
@@ -32,7 +32,7 @@ class Edificio:
         print("Buscando------------------------")
         print(f"El edificio que busca se encuentra en: {bu}")
     
-    def modificar_edificio():
+    def modificar_edificio(self):
         print("Modificar edificio\n")
         numi = int(input("Ingrese el indice que desea modificar: "))
         print(Edificio.listEdificio[: numi])
@@ -42,28 +42,27 @@ class Edificio:
 
     #Defining Getters and Setters
     def get_nombre_edificio(self):
-        return self.__nombre_edificio
+        return self._nombre_edificio
     def set_nombre_edificio(self, nombre_edificio):
-        self.__nombre_edificio == nombre_edificio
+        self._nombre_edificio = nombre_edificio
     def get_direccion(self):
-        return self.__direccion
+        return self._direccion
     def set_direccion(self, direccion):
-        self.__direccion == direccion
+        self._direccion = direccion
     def get_cantidad_pisos(self):
-        return self.__cantidad_pisos
+        return self._cantidad_pisos
     def set_cantidad_pisos(self, cantidad_pisos):
-        self.__cantidad_pisos == cantidad_pisos
+        self._cantidad_pisos = cantidad_pisos
     def get_cantidad_aulas(self):
-        return self.__cantidad_pisos
+        return self._cantidad_pisos
     def set_cantidad_aulas(self, cantidad_aulas):
-        self.__cantidad_aulas == cantidad_aulas
+        self._cantidad_aulas = cantidad_aulas
 
     #Property definitions for each attribute.
 
     nombre_edifcio = property(get_nombre_edificio, set_nombre_edificio)
     direccion = property(get_direccion,set_direccion)
     cantidad_pisos = property(get_cantidad_pisos, set_cantidad_pisos)
-    cantidad_aulas = property(get_cantidad_aulas, get_cantidad_aulas)
-
+    cantidad_aulas = property(get_cantidad_aulas, set_cantidad_aulas)
 
 

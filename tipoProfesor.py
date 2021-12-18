@@ -1,19 +1,19 @@
-from turno import *
+
+
 class Tipo_profesor:
     listatipoprofesor = []
 
     def __init__(self, tipo_profesor):
-        self.__tipo_profesor = tipo_profesor
-        self.__turno = Turno()
+        self._tipo_profesor = tipo_profesor
+        #self._profesor = profesor
 
-    def registrar_tipo_profesor():
+    def registrar_tipo_profesor(self):
         print("Registrar tipo de profesor\n")
         tipo_profesor = input("Ingrese el tipo de profesor: ")
-        turno = input("Introduzca el turno del profesor: ")
-        objTipoProfesor = Tipo_profesor(tipo_profesor, turno)
+        objTipoProfesor = Tipo_profesor(tipo_profesor)
         Tipo_profesor.listatipoprofesor.append(objTipoProfesor)
 
-    def elimninar_tipo_profesor():
+    def eliminar_tipo_profesor(self):
         print("Eliminar tipo de profesor\n")
         borrar = input("Escriba el tipo de profesor que desea eliminar: ")
         bo = Tipo_profesor.listatipoprofesor.pop(borrar)
@@ -21,7 +21,7 @@ class Tipo_profesor:
         print("------------------------")
         print("Se ha eliminado con exito")
     
-    def buscar_tipo_profesor():
+    def buscar_tipo_profesor(self):
         print("Buscar tipo profesor\n")
         buscar = input("Escriba el tipo de profesor que desea encontrar: ")
         bu = Tipo_profesor.listatipoprofesor.index(buscar)
@@ -29,7 +29,7 @@ class Tipo_profesor:
         print("Buscando------------------------")
         print(f"El edificio que busca se encuentra en: {bu}")
     
-    def modificar_edificio():
+    def modificar_edificio(self):
         print("Modificar tipo de profesor\n")
         numi = int(input("Ingrese el indice que desea modificar: "))
         print(Tipo_profesor.listatipoprofesor[: numi])
@@ -37,10 +37,17 @@ class Tipo_profesor:
         Tipo_profesor.listatipoprofesor[:numi] = [modi]
         print(Tipo_profesor.listatipoprofesor)
 
+    def display(self):
+        return self._tipo_profesor
+
+    def __str__(self):
+        return f"""\nTipo de Profesor[
+        Tipo: {self._tipo_profesor}]"""
+
     def get_tipo_profesor(self):
-        return self.__tipo_profesor 
+        return self._tipo_profesor
 
     def set_tipo_profesor(self, tipo_profesor):
-        self.__tipo_profesor = tipo_profesor
+        self._tipo_profesor = tipo_profesor
 
     tipo_profesor = property(get_tipo_profesor, set_tipo_profesor)
