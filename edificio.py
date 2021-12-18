@@ -31,6 +31,14 @@ class Edificio:
         print("-------------------")
         print("Buscando------------------------")
         print(f"El edificio que busca se encuentra en: {bu}")
+    
+    def modificar_edificio():
+        print("Modificar edificio\n")
+        numi = int(input("Ingrese el indice que desea modificar: "))
+        print(Edificio.listEdificio[: numi])
+        modi = input("Ingrese la modificacion que desea realizar: ")
+        Edificio.listEdificio[:numi] = [modi]
+        print(Edificio.listEdificio)
 
     #Defining Getters and Setters
     def get_nombre_edificio(self):
