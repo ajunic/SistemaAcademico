@@ -38,7 +38,7 @@ class Profesor(Persona):
         email = input("Ingrese el email del docente: ")
         codigo_profesor = input("Ingrese el codigo del docente: ")
         obj_programa = Programa.registrar_programa()
-        obj_curso = Curso.registrar_curso()
+        obj_curso = Curso.crear_curso()
         obj_profesor = Profesor("Docente", nombre, apellido, cedula, direccion, telefono, fecha_nacimiento,email,codigo_profesor,obj_curso,obj_programa)
         Profesor.listaProfesor.append(obj_profesor)
 

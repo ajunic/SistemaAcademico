@@ -1,41 +1,75 @@
 from curso import Curso
-import datetime
-lista_programas=[]
+from datetime import datetime
+
+
 class Programa:
-    def __init__(self,  nombre_programa, fecha_creacion_programa, status_programa, director, curso=[]):
+    contador_programa = 0
+    lista_programas=[]
+
+    def __init__(self,  nombre_programa, fecha_creacion, status_programa, director, mini, maxi, duracion):
+        Programa.contador_programa += 1
         self.__nombre_programa = nombre_programa
-        self.__fecha_creacion_programa = fecha_creacion_programa
+        self.__fecha_creacion_programa = fecha_creacion
         self.__status_programa = status_programa #status_programa = 0
         self.__director = director
+        self.__duracion = duracion
         self.__curso=[] #agregacion
+        self.__maxi = maxi
+        self.__mini = mini
+        self.__duracion = duracion
+        self.__id = Programa.contador_programa
 
     def registrar_programa():
-        print("Se registro el programa")
-        pass
+        nombre_programa = input('Ingrese el nombre del programa: ')
+        fecha = datetime.today().strftime('%d-%m-%y')
+        status_programa = input('Ingrese estado del programa: ')
+        director = input('Ingrese nombre del director: ')
+        mini = int(input('Ingrese el minimo de cursos: '))
+        maxi = int(input('Ingrese el maximo de cursos: '))
+        duracion = input('Ingrese la duracion:')
+        objetoPrograma = Programa(nombre_programa, fecha, status_programa, director, mini, maxi, duracion)
+        Programa.lista_programas.append(objetoPrograma)
 
-    def __str__(self):
-        return self.__curso
+        
+    def imprimir_cursos():
+        for i in Programa.lista_programas:
+            print(f'{i.__nombre_programa}')
+            for j in i.__curso:
+                print(f'    *{j.nombre_curso}')
     
-    def agregar_curso(self, curso):
-        self.__curso.append(curso)
+    
+    def agregar_curso():
+        id_prog = 0
+        print('Eliga el programa')
+        for i in Programa.lista_programas:
+            print(f'{i.__id}. {i.__nombre_programa}')
+        id_prog = int(input())
 
-    def quitar_curso(self, curso):
-        self.__curso.remove(curso)
+        for i in Programa.lista_programas:
+            if id_prog == i.__id:
+                id = None
+                while id != 0:
+                    print('Seleciona el curso que desea agregar (Presione 0 para salir)')
+                    for j in Curso.lista_curso:
+                        print(f'{j.id_curso}. {j.nombre_curso}')
+                    
+                    id = int(input())
 
-       
-    def mostrar_curso(self):
-        for curso in self.__curso:
-            print(curso)
-        return self.__curso
+                    if id == 0 and len(i.__curso) < i.__mini: 
+                        print('No ha seleccionado el minimo de cursos')
+                        id = None
+                        continue
+                    
+                    elif len(i.__curso) >= i.__maxi:
+                        print('Ya ha completado el numero maximo de cursos')
+                        break
 
-    def limitar_curso(self):
-        if len(self.__curso) < 3:
-            print("El programa tiene mas de 3 cursos")
-        else:
-            print("El programa tiene menos de 3 cursos")
+                    for j in Curso.lista_curso:
+                        if j.id_curso == id:
+                            i.__curso.append(j)
     
 
-    #Definir setter y getter
+    #Definir setter y getter    
     def get_nombre_programa(self):
         return self.__nombre_programa
 
@@ -46,7 +80,7 @@ class Programa:
         return self.__fecha_creacion_programa
 
     def set_fecha_creacion_programa(self, fecha_creacion_programa):
-        self.__fecha_creacion_programa = fecha_creacion_programa
+        self.__fecha_creacion_programa = fecha_creacion_programa 
 
     def get_status_programa(self):
         return self.__status_programa
@@ -60,68 +94,27 @@ class Programa:
     def set_director(self, director):
         self.__director = director
 
+    def set_curso(self, curso):
+        self.__curso.append(curso)
+
+    def get_curso(self):
+        return self.__curso
+
     #Definir property
     nombre_programa = property(get_nombre_programa, set_nombre_programa)
     fecha_creacion_programa = property(get_fecha_creacion_programa, set_fecha_creacion_programa)
     status_programa = property(get_status_programa, set_status_programa)
     director = property(get_director, set_director)
-
-    #no se cual es la funcion main ,
-    def main():
-        pass
+    curso = property(get_curso, set_curso)
 
 
-    def amdministrar_programa(self, op):
-        if op == 1:
+Curso.crear_curso()
+Curso.crear_curso()
+# Curso.nombre_id()
+Programa.registrar_programa()
+Programa.registrar_programa()
+Programa.agregar_curso()
+Programa.imprimir_cursos()
 
-            print("Crear un programa \n")
-            id_programa = int(input("Digite el ID del programa: "))
-            nombre_programa = input("Ingrese el nombre del nuevo programa: ").lower()
-            fecha_creacion = datetime
-            status = input("Digite status si es 'activo' o 'inactivo': ").lower()
-            director = input("Digite el nombre del director: ")
-            obj_programa = Programa(id_programa, nombre_programa, fecha_creacion, status, director)
-            lista_programas.append(obj_programa)
-        if op == 2:
+#Programa.imprimir_cursos()
 
-            print("Buscar Programa\n")
-            id_programa = int(input("Digite el ID del programa: "))
-            for obj_programa in lista_programas:
-                if id_programa == obj_programa:
-                    print("Nombre del programa: ".format(nombre_programa))
-                    print("Fecha de creacion: {%c}".format(fecha_creacion))
-                    print("Estatus del Programa: ".format(status))
-                    print("Nombre del director: ".format(director))
-
-        if op == 3:
-
-            print("Listado de todos los programas \n")
-            for obj_programa in lista_programas:
-                print(obj_programa)
-
-        if op == 4:
-            print("Modifique un programa existente\n")
-            id_programa = int(input("Digite el ID del programa: "))
-            for obj_programa in lista_programas:
-                if id_programa == obj_programa:
-                    id_programa = int(input("Digite el nuevo ID del programa: "))
-                    nombre_programa = input("Ingrese el nombre del programa: ")
-                    fecha_creacion = datetime
-                    status = input("Digite status si es 'activo' o 'inactivo': ").lower()
-                    director = input("Digite el nombre del director: ")
-                    obj_programa = Programa(id_programa, nombre_programa, fecha_creacion, status, director)
-                    lista_programas.append(obj_programa)
-                    print("Programa modificado exitosamente!")
-        else:
-            return Programa.main()  #cual es???
-
-
-
-
-# ing1 =Programa("ingenieria_Civil", "12/12/12", "activo", "Juan", ["Calculo2", "fisica"])
-# ing2= Programa("Arquitectura", "12/15/16", "activo", "Juan")
-# cur1=Curso("Calculo4", 5, 20,"Ingenieria civil",90)
-
-# print(ing1.director)
-
-# print(ing2.__dict__)
