@@ -1,5 +1,9 @@
 from Persona import Persona
+<<<<<<< HEAD
 from testAnalytics import *
+=======
+from curso import Curso
+>>>>>>> 7a91e9d641105081b35c70ca9132444777bf25b9
 
 class Estudiante(Persona):
 
@@ -42,6 +46,12 @@ class Estudiante(Persona):
         for i in Estudiante.listaEstudiantes:
             print(i)
 
+    def __gt__(self, other):
+        """Comparamos nota para aplicar descuento o no"""
+        precio_descuento= 0
+        if other.__nota > 90:
+            precio_descuento = 0.9* other.__precio
+            return print (f'El precio con descuento es: {precio_descuento}')
 
     # define setter and getter methods for Estudiante attributes
     def get_num_carnet(self):

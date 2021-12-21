@@ -1,0 +1,88 @@
+[33mcommit a822d0d74537b4db1e8f64d9cac5d53ea1b39504[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Armando Ugarte <71776802+ajunic@users.noreply.github.com>
+Date:   Thu Dec 16 21:13:45 2021 -0600
+
+     agregado metod de comparacion  en programa
+
+[33mcommit 5383b0dd093b0bd313ffa86e6dd09fb329fcf74b[m
+Author: Armando Ugarte <71776802+ajunic@users.noreply.github.com>
+Date:   Thu Dec 16 19:42:07 2021 -0600
+
+    Agregue archivo analitics y metodo registrar_programa en la clase programa;menu actualizado para mostrar programa
+
+[33mcommit 87986ca6d15d25bd0ae796866871fbe1f5f931e7[m
+Author: rodmelendez <melendezr97@gmail.com>
+Date:   Thu Dec 16 00:43:10 2021 -0600
+
+    Correccion de archivos y menu principal
+
+[33mcommit 5fb4d3073cd4c1b5c5eab4f6809640a3675cea86[m
+Author: rodmelendez <melendezr97@gmail.com>
+Date:   Thu Dec 16 00:38:34 2021 -0600
+
+    Correccion del menu principal
+
+[33mcommit 4597fc1ee6d9530d7f5682d8ca16b4a468efb6b0[m
+Merge: ddc4add 936eb37
+Author: rodmelendez <melendezr97@gmail.com>
+Date:   Wed Dec 15 20:49:51 2021 -0600
+
+    Merge branch 'master' into rodolfo
+    
+    # Conflicts:
+    #       main.py
+
+[33mcommit 936eb370c85e6928de94e5ee8dfe65eb825d239e[m
+Author: ashly ramos <rivasvashly16@gmail.com>
+Date:   Wed Dec 15 00:05:42 2021 -0600
+
+    Se agrego metodos de aula
+
+[33mcommit 98b95d8657c4b7d28198e34ff5a492a72c9b5dd8[m
+Author: ashly ramos <rivasvashly16@gmail.com>
+Date:   Wed Dec 15 00:04:39 2021 -0600
+
+    se elimino aula de edificio
+
+[33mcommit 398421d82bfe31c550fb3a84a71d3a9d4f2e4c21[m
+Author: ashly ramos <rivasvashly16@gmail.com>
+Date:   Wed Dec 15 00:03:51 2021 -0600
+
+    Modificacion de metodos en aula
+
+[33mcommit f881fce340ecc2a73fbbab68bffc0603ce562a77[m
+Author: rodmelendez <melendezr97@gmail.com>
+Date:   Tue Dec 14 21:40:08 2021 -0600
+
+    Conflicto de archivo main resuelto
+
+[33mcommit ddc4addfc2d72773a071cc638b5b329e91ad38ef[m
+Merge: d46008a 5ac5150
+Author: rodmelendez <melendezr97@gmail.com>
+Date:   Tue Dec 14 00:20:15 2021 -0600
+
+    Merge branch 'master' of https://github.com/ajunic/SistemaAcademico
+
+[33mcommit ee2b4beff3eaa78467403f063813e2579341c2e9[m
+Author: ashly ramos <rivasvashly16@gmail.com>
+Date:   Tue Dec 14 00:00:10 2021 -0600
+
+    se agrego metodos en el edificio
+
+[33mcommit 5ac515053a0af08666909dc02f297d0eff113f87[m
+Author: Sjeffmichael <59579199+Sjeffmichael@users.noreply.github.com>
+Date:   Mon Dec 13 18:49:52 2021 -0600
+
+    Michael, añadiendo metodos de registrar y mostrar a la clase Estudiante
+
+[33mcommit 48a5be160a92a9d326d8d2d0887cb1aee8cb5cbf[m
+Author: Armando Ugarte <71776802+ajunic@users.noreply.github.com>
+Date:   Sun Dec 12 08:07:29 2021 -0600
+
+    Version agregada de todos
+
+[33mcommit d46008a090bbeb3fbb589289c54fac987e73e132[m
+Author: Armando Ugarte <71776802+ajunic@users.noreply.github.com>
+Date:   Sat Dec 11 18:08:14 2021 -0600
+
+    Initial commit
