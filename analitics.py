@@ -1,25 +1,43 @@
 import statistics as stats
-
+import csv
+import datetime
 class Analytics():
+
+    fechaHora = datetime
+    results = []
+    header = ["Media Aritmetica", "Mediana", "Moda", "Minimo", "Maximo", "Fecha y Hora"]
+    #header = []
     def __init__(self, *valores):
         self.__valores = valores
         self.menuAnalytics()
 
 
     def calcularMedia(self):
-        return f"\nLa media aritmética de los valores: {self.__valores} \n es {stats.mean(self.__valores)}\n"
+        media = stats.mean(self.__valores)
+        Analytics.results.append(media)
+        return f"\nLa media aritmética de los valores: {self.__valores} \n es {media}\n"
 
     # ---------------------------------------------------------------------------------
     def minimoMaximo(self):
-        return f"\nEl valor minimo es: {min(self.__valores)}\n El valor máximo es: {max(self.__valores)}\n"
+        minimo = min(self.__valores)
+        maximo = max(self.__valores)
+        Analytics.results.append(minimo)
+        Analytics.results.append(maximo)
+        return f"\nEl valor minimo es: {minimo}\n El valor máximo es: {maximo}\n"
 
     # ---------------------------------------------------------------------------------
     def calcularMediana(self):
-        return f"\nLa mediana de los valores dados es: {stats.median(self.__valores)}\n"
+        mediana = stats.median(self.__valores)
+        Analytics.results.append(mediana)
+        return f"\nLa mediana de los valores dados es: {mediana}\n"
 
     # ---------------------------------------------------------------------------------
     def calcularModa(self):
-        return f"\nLa moda de los valores dados es: {stats.multimode(self.__valores)}\n"
+        moda = stats.multimode(self.__valores)
+        Analytics.results.append(moda)
+
+        return f"\nLa moda de los valores dados es: {moda}\n"
+
 
     #---------------------------------------------------------------------------------
     def menuAnalytics(self):
@@ -46,9 +64,13 @@ class Analytics():
                     print("\033[4;32m" + self.calcularMediana())
                     print("\033[4;32m" + self.calcularModa())
                     print("\033[4;32m" + self.minimoMaximo())
-                    repetir = False
-                    return
+
                 elif opc == 0:
+
+                    with open("calculos.csv", "a+", encoding='utf-8', newline='') as csvfile:
+                        writer = csv.writer(csvfile)
+                        writer.writerow(self.header)
+                        writer.writerow(Analytics.results)
                     print("\033[4;32m" + "Deteniendo ejecucion...")
                     repetir = False
                     return
@@ -60,10 +82,10 @@ class Analytics():
                 break
 
     # ---------------------------------------------------------------------------------
+    
+    #file = open("Estadisticas del Programa")
 
-
-analitica = Analytics(60, 40, 30)
-
+analitica = Analytics(60, 40,40,40, 30, 30, 30, 50, 10, 15)
 
 
 
