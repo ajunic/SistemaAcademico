@@ -4,6 +4,8 @@ from Profesor import *
 from edificio import *
 from Estudiante import *
 from aula import *
+from tipoProfesor import *
+from turno import *
 
 #Programa principal
 """Autores:-    
@@ -135,15 +137,12 @@ while digito<=4:
                     print("4. SALIR")
                     numero=int(input("Ingrese el numero de servicios que desea verificar: "))
 
-                    if numero == 1:
-                        print("\t Registrar nuevo profesor")
-                    elif numero == 2:
-                        print("\t Mostrar profesor")
-                    elif numero == 3:
-                        print("\t Eliminar profesor")
-                    elif numero == 4:
-                        print("\t Saliendo de administrar profesores")
-                        break  # salir
+                    if numero==1:
+                        Profesor.mostrar_docente()
+                    elif numero==2:
+                        Profesor.elimninar_docente()
+                    elif numero==3:
+                        break
 
             elif numero==2:
                 print("\t ADMINISTRAR ESTUDIANTES")
@@ -162,178 +161,149 @@ while digito<=4:
                             print("\t Mostrar estudiante")
                             #Estudiante.mostrar_estudiantes()
                         elif numero==3:
-                            print("\t Eliminar estudiante")
+                            Estudiante.elimninar_estudiante()
                         elif numero == 4:
                             print("\t Saliendo de administrar estudiantes")
                             break #salir
 
             elif numero==3:
                 print("\t ADMINISTRAR CATALOGOS")
-                while (numero <= 7):
+                while (numero <= 5):
                         print("\t MENU")
                         print("1. Cursos")
-                        print("2. Tipos de profesores")
-                        print("3. Edificios")
-                        print("4. Aulas")
+                        print("2. Aulas")
+                        print("3. Tipos de profesores")
+                        print("4. Edificio")
                         print("5. Turno")
-                        print("6. Programas")
-                        print("7. Salir")
-                        numero=int(input("Ingrese el numero del catalogo que desea administrar: "))
+                        print("6. Salir")
+                        numero=int(input("Ingrese el numero de servicios que desea verificar: "))
 
                         if numero==1:
-                            print("\t ADMINISTRAR CURSOS")
-                            while (numero <= 5):
-                                    print("\t MENU DE CURSOS")
-                                    print("1. Registrar nuevo curso")
-                                    print("2. Editar curso")
-                                    print("3. Mostrar cursos")
-                                    print("4. Eliminar curso")
-                                    print("5. Salir")
-                                    numero=int(input("Ingrese el numero de servicio que desea verificar: "))
+                              print("\t ADMINISTRAR CURSOS")
+                              while (numero <= 2):
+                                print("\t MENU")
+                                print("1. Registrar nuevos cursos")
+                                print("2. Eliminar cursos")
+                                print("3. Buscar cursos")
+                                print("4. SALIR")
+                                numero=int(input("Ingrese el numero de servicios que desea verificar: "))
 
-                                    if numero==1:
-                                        print("\t Registrar nuevo curso")
+                                if numero==1:
+                                    print("\t Registrar cursos")
+                                    Curso.crear_curso()
+                                    
+                                elif numero==2:
+                                    print("\t Eliminar cursos")
+                                    Curso.eliminar_curso
+                                    
+                                elif numero==3:
+                                    print("\t Buscar cursos")
+                                    Curso.buscar_curso()
+                                    
+                                elif numero==4:
+                                    break
 
-                                    elif numero==2:
-                                        print("\t Editar curso")
-
-                                    elif numero==3:
-                                        print("\t Mostrar curso")
-
-                                    elif numero==4:
-                                        print("\t Eliminar curso")
-
-                                    elif numero==5:
-                                        print("\t Usted ha salido del catalogo de cursos")
-                                        break
                         elif numero==2:
-                            print("\t ADMINISTRAR TIPOS DE PROFESORES")
-                            while (numero <= 5):
-                                    print("\t MENU DE TIPOS DE PROFESORES")
-                                    print("1. Registrar nuevo tipo de profesor")
-                                    print("2. Editar profesor")
-                                    print("3. Mostrar profesores")
-                                    print("4. Eliminar profesor")
-                                    print("5. Salir")
-                                    numero=int(input("Ingrese el numero de servicio que desea verificar: "))
-
-                                    if numero==1:
-                                        print("\t Registrar nuevo profesor")
-
-                                    elif numero==2:
-                                        print("\t Editar profesor")
-
-                                    elif numero==3:
-                                        print("\t Mostrar tipo de profesores")
-
-                                    elif numero==4:
-                                        print("\t Eliminar tipo de profesor")
-
-                                    elif numero==5:
-                                        print("\t Usted ha salido del catalogo de tipo de profesors")
-                                        break
-                        elif numero==3:
-                            print("\t ADMINISTRAR EDIFICIOS")
-                            while (numero <= 4):
-                                    print("\t MENU DE EDIFICIOS")
-                                    print("1. Registrar nuevos edificios")
-                                    print("2. Eliminar edificios")
-                                    print("3. Buscar edificios")
-                                    print("4. SALIR")
-                                    numero=int(input("Ingrese el numero de servicios que desea verificar: "))
-
-                                    if numero==1:
-                                        print("\t Registrar edificios")
-                                        Edificio.registrar_edificio()
-
-                                    elif numero==2:
-                                        print("\t Eliminar edificios")
-                                        Edificio.elimninar_edificio()
-
-                                    elif numero==3:
-                                        print("\t Buscar edificios")
-                                        Edificio.buscar_edificio()
-
-                                    elif numero==4:
-                                        break
-                        elif numero==4:
                             print("\t ADMINISTRAR AULAS")
                             while (numero <= 4):
-                                    print("\t MENU")
-                                    print("1. Registrar nuevas aulas")
-                                    print("2. Eliminar aulas")
-                                    print("3. Buscar aulas")
-                                    print("4. SALIR")
-                                    numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+                                print("\t MENU")
+                                print("1. Registrar nuevas aulas")
+                                print("2. Eliminar aulas")
+                                print("3. Buscar aulas")
+                                print("4. SALIR")
+                                numero=int(input("Ingrese el numero de servicios que desea verificar: "))
 
-                                    if numero==1:
-                                        print("\t Registrar aulas")
-                                        Aula.registrar_aula()
+                                if numero==1:
+                                    print("\t Registrar aulas")
+                                    Aula.registrar_aula()
+                                    
+                                elif numero==2:
+                                    print("\t Eliminar aulas")
+                                    Aula.elimninar_aula()
+                                    
+                                elif numero==3:
+                                    print("\t Buscar aula")
+                                    Aula.buscar_aula()
+                                    
+                                elif numero==4:
+                                    break
 
-                                    elif numero==2:
-                                        print("\t Eliminar aulas")
-                                        Aula.elimninar_aula()
+                        elif numero==3:
+                            print("\t ADMINISTRAR TIPO DE PROFESORES")
+                            while (numero <= 4):
+                                print("\t MENU")
+                                print("1. Registrar nuevos tipos de profesores")
+                                print("2. Eliminar tipo de profesor")
+                                print("3. Buscar tipo de profesor")
+                                print("4. SALIR")
+                                numero=int(input("Ingrese el numero de servicios que desea verificar: "))
 
-                                    elif numero==3:
-                                        print("\t Buscar aula")
-                                        Aula.buscar_aula()
+                                if numero==1:
+                                    print("\t Registrar nuevo tipo de profesor")
+                                    Tipo_profesor.registrar_tipo_profesor()
+                                    
+                                elif numero==2:
+                                    print("\t Eliminar tipo de profesor")
+                                    Tipo_profesor.elimninar_tipo_profesor()
+                                    
+                                elif numero==3:
+                                    print("\t Buscar tipo de profesor")
+                                    Tipo_profesor.buscar_tipo_profesor()
+                                    
+                                elif numero==4:
+                                    break
 
-                                    elif numero==4:
-                                        break
+                        elif numero==4:
+                            print("\t ADMINISTRAR EDIFICIOS")
+                            while (numero <= 4):
+                                print("\t MENU")
+                                print("1. Registrar nuevos edificios")
+                                print("2. Eliminar edificios")
+                                print("3. Buscar edificios")
+                                print("4. SALIR")
+                                numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+
+                                if numero==1:
+                                    print("\t Registrar edificios")
+                                    Edificio.registrar_edificio()
+                                        
+                                elif numero==2:
+                                    print("\t Eliminar edificios")
+                                    Edificio.elimninar_edificio()
+                                        
+                                elif numero==3:
+                                    print("\t Buscar edificios")
+                                    Edificio.buscar_edificio()
+                                        
+                                elif numero==4:
+                                    break
+                        
                         elif numero==5:
-                            print("\t ADMINISTRAR TURNOS")
+                            print("\t ADMINISTRAR TURNO")
                             while (numero <= 4):
                                 print("\t MENU")
                                 print("1. Registrar nuevos turnos")
                                 print("2. Eliminar turnos")
                                 print("3. Buscar turnos")
                                 print("4. SALIR")
-                                numero = int(input("Ingrese el numero de servicios que desea verificar: "))
+                                numero=int(input("Ingrese el numero de servicios que desea verificar: "))
 
-                                if numero == 1:
-                                    print("\t Registrar turnos")
-
-
-                                elif numero == 2:
-                                    print("\t Eliminar turnos")
-
-
-                                elif numero == 3:
+                                if numero==1:
+                                    print("\t Registrar nuevo turno")
+                                    Turno.registrar_turno()
+                                        
+                                elif numero==2:
+                                    print("\t Eliminar turno")
+                                    Turno.elimninar_turno()
+                                        
+                                elif numero==3:
                                     print("\t Buscar turno")
-
-
-                                elif numero == 4:
+                                    Turno.buscar_turno()
+                                        
+                                elif numero==4:
                                     break
-                                
-                        elif numero ==6:
-                            #Administrar programas que contienen cursos para la clase analitics
-                            print("\t ADMINISTRAR PROGRAMAS")
-                            while (numero <= 4):
-                                print("\t MENU")
-                                print("1. Crear programa")
-                                print("2. Eliminar programas")
-                                print("3. Buscar programas")
-                                print("4. SALIR")
-                                numero = int(input("Ingrese el numero de servicios que desea verificar: "))
 
-                                if numero == 1:
-                                    print("\t Crear programa")
-                                    Programa.registrar_programa()
-
-
-
-                                elif numero == 2:
-                                    print("\t Eliminar programa")
-
-
-                                elif numero == 3:
-                                    print("\t Buscar Programa")
-
-
-                                elif numero == 4:
-                                    break
-                        elif numero ==7:
-                            print("\t Salir de catalogos")
+                        elif numero==6:
                             break
 
             elif numero == 4:
