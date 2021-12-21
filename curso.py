@@ -14,7 +14,7 @@ class Curso:
         self.__programa = ''
         self.__aulas = []#list(aulas)
         self.__precio = precio
-        self.id_curso = Curso.contador_curso
+        self.__id_curso = Curso.contador_curso
 
     def nombre_id():
         print('Seleciona el curso que desea agregar')
