@@ -12,6 +12,7 @@ class Programa:
         self.__fecha_creacion_programa = fecha_creacion
         self.__status_programa = status_programa #status_programa = 0
         self.__director = director
+        self.__duracion = duracion
         self.__curso=[] #agregacion
         self.__maxi = maxi
         self.__mini = mini
@@ -105,10 +106,6 @@ class Programa:
     status_programa = property(get_status_programa, set_status_programa)
     director = property(get_director, set_director)
     curso = property(get_curso, set_curso)
-
-
-
-    
 
 
 Curso.crear_curso()

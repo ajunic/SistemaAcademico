@@ -84,8 +84,6 @@ class Curso:
     horas_semanales = property(get_horas_semanales, set_horas_semanales)
     programa = property(get_programa, set_programa)
     nota = property(get_nota, set_nota)
-    precio = property(get_precio, set_precio)
-    id_curso = property(get_id_curso, set_id_curso)
 
     # Mostrar nombre del curso
     def show(self):
