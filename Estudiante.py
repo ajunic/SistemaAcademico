@@ -1,5 +1,9 @@
 from Persona import Persona
+<<<<<<< HEAD
+from testAnalytics import *
+=======
 from curso import Curso
+>>>>>>> 7a91e9d641105081b35c70ca9132444777bf25b9
 
 class Estudiante(Persona):
 
