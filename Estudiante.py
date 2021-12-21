@@ -1,5 +1,5 @@
 from Persona import Persona
-
+from testAnalytics import *
 
 class Estudiante(Persona):
 
