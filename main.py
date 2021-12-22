@@ -1,6 +1,6 @@
-from SistemaAcademico.mainAdministrar import*
-from SistemaAcademico.mainDocente import* 
-from SistemaAcademico.mainEstudiante import*
+from mainAdministrar import*
+from mainDocente import* 
+from mainEstudiante import*
 from programa import *
 
 
@@ -63,8 +63,6 @@ while digito<=4:
         salto_linea()        
     #submenu de servicios administrativos        
     elif digito==3:
-        numero=0
-        numero=int(input("Ingrese el numero de servicios que desea verificar: "))
         main_Administrar_cat.menu_Administracion()
 
         salto_linea()        

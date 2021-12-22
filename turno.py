@@ -44,6 +44,7 @@ class Turno:
     turno = property(get_turno, set_turno)
 
     def administrar_turno():
+        numero=0
         while (numero <= 4):
             print("\t MENU")
             print("1. Registrar nuevos turnos")

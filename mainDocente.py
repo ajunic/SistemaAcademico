@@ -32,6 +32,7 @@ class main_Profesor:
                 break
 
     def menu_adminDoc():
+        numero=0
         while (numero<=2):
             print("\t MENU")
             print("1.MOSTRAR PROFESORES:")

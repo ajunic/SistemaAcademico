@@ -71,6 +71,7 @@ class Aula:
     capacidad_asientos = property(get_capacidad_asientos, set_capacidad_asientos)
 
     def administrar_Aula(): #Devolvera None
+        numero=0
         while (numero <= 4):
             print("\t MENU")
             print("1. Registrar nuevas aulas")

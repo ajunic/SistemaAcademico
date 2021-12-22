@@ -37,21 +37,23 @@ class main_Estudiante:
                         break
 
     def menu_adminEstu():
+        numero=0
         while (numero<=4):
-                        print("\t MENU")
-                        print("1. REGISTRAR ESTUDIANTES:")
-                        print("2. MOSTRAR ESTUDIANTES:")
-                        print("3. ELIMINAR ESTUDIANTES:")
-                        print("4. SALIR")
-                        numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+            print("\t MENU")
+            print("1. REGISTRAR ESTUDIANTES:")
+            print("2. MOSTRAR ESTUDIANTES:")
+            print("3. ELIMINAR ESTUDIANTES:")
+            print("4. SALIR")
+            numero=int(input("Ingrese el numero de servicios que desea verificar: "))
 
-                        if numero==1:
-                            Estudiante.registrarEstudiante()
-                            pass #metodo para registrar estudiantes
-                        elif numero==2:
-                            Estudiante.mostrar_estudiantes()
-                            pass #mostrar estudiantes
-                        elif numero==3:
-                            Estudiante.elimninar_estudiante()
-                        elif numero == 4:
-                            break #salir
+            if numero==1:
+                Estudiante.registrarEstudiante()
+                
+            elif numero==2:
+                Estudiante.mostrar_estudiantes()
+                
+            elif numero==3:
+                Estudiante.elimninar_estudiante()
+
+            elif numero == 4:
+                break #salir

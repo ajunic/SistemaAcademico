@@ -46,6 +46,7 @@ class Tipo_profesor:
     tipo_profesor = property(get_tipo_profesor, set_tipo_profesor)
 
     def administrar_tipo_profesor():
+        numero=0
         while (numero <= 4):
             print("\t MENU")
             print("1. Registrar nuevos tipos de profesores")

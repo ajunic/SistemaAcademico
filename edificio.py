@@ -66,6 +66,7 @@ class Edificio:
     cantidad_aulas = property(get_cantidad_aulas, get_cantidad_aulas)
 
     def administrar_edificio():
+        numero=0
         while (numero <= 4):
             print("\t MENU")
             print("1. Registrar nuevos edificios")
