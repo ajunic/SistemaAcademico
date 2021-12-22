@@ -39,8 +39,9 @@ print("Siga las indicaciones para que el programa funcione correctamente")
 print("Sigase las indicaciones para que el programa funcione correctamente ")
 
 #variable de control para menu
-print("Ingrese 1 para Servicios Docente \n 2 Para Servicios estudiantiles \n 3 Para Servicios administrativos \n 4 Para Salir")
-digito=int(input("Ingrese un numero: "))
+#print("Ingrese 1 para Servicios Docente \n 2 Para Servicios estudiantiles \n 3 Para Servicios administrativos \n 4 Para Salir")
+#digito=int(input("Ingrese un numero: "))
+digito=0
 
 #menu de 4 opciones y sus subramas
 while digito<=4:

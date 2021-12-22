@@ -1,5 +1,5 @@
 from Persona import Persona
-from testAnalytics import *
+#from testAnalytics import *
 from curso import Curso
 
 class Estudiante(Persona):
