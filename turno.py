@@ -38,6 +38,6 @@ class Turno:
         print(Turno.listaTurno)
 
 #prueba de la agregacion entre clase turno contiene a tipo_profesor
-fff = Tipo_profesor("Horario")
-p = Turno("Matutino", fff)
-print(p)
+# fff = Tipo_profesor("Horario")
+# p = Turno("Matutino", fff)
+# print(p)

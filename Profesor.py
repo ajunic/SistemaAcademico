@@ -10,14 +10,13 @@ class Profesor(Persona):
     contador_profesor = 0
     listaProfesor = []
 
-    def __init__(self, tipo, nombre, apellido, cedula, direccion, telefono, fecha_nacimiento,
-                 email, codigo_profesor, obj_programa, obj_curso):#none
+    def __init__(self, nombre, apellido, cedula, direccion, telefono, fecha_nacimiento,
+                 email):#none
         Profesor.contador_profesor = + 1
-        super().__init__(tipo, nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, email)
+        super().__init__(nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, email)
         self._id_profesor = Profesor.contador_profesor
-        self._codigo_profesor = codigo_profesor
-        self._obj_programa = obj_programa
-        self._obj_curso = obj_curso
+        self._obj_curso = []
+        self._obj_tipo = []
 
     def __str__(self):
         return f"""\nProfesor:[ ID: {self._id_profesor}
@@ -36,10 +35,9 @@ class Profesor(Persona):
         telefono = input("Ingrese el telefono del docente: ")
         fecha_nacimiento = input("Ingrese la fecha de nacimiento del docente: ")
         email = input("Ingrese el email del docente: ")
-        codigo_profesor = input("Ingrese el codigo del docente: ")
-        obj_programa = Programa.registrar_programa()
-        obj_curso = Curso.crear_curso()
-        obj_profesor = Profesor("Docente", nombre, apellido, cedula, direccion, telefono, fecha_nacimiento,email,codigo_profesor,obj_curso,obj_programa)
+        #obj_programa = Programa.registrar_programa()
+        #obj_curso = Curso.crear_curso()
+        obj_profesor = Profesor(nombre, apellido, cedula, direccion, telefono, fecha_nacimiento,email)
         Profesor.listaProfesor.append(obj_profesor)
 
     def mostrar_docente(self):
@@ -77,5 +75,8 @@ class Profesor(Persona):
 
     def set_codigo_profesor(self, codigo_profesor):
         self._codigo_profesor = codigo_profesor
+
+    def get_tipo(self):
+        return self._obj_tipo
     #Property
     codigo_profesor = property(get_codigo_profesor, set_codigo_profesor)

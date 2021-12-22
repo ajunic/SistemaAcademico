@@ -16,12 +16,11 @@ Class Factory y el uso del decorador @property para la implementación y/o
 operacionalización de propiedades)."""
 
 class Persona:#superclase
-    contador_personas = 0
+    #contador_personas = 0
     listaPersona = []
 
-    def __init__(self, tipo, nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, email):
-        Persona.contador_personas += 1
-        self._tipo = tipo
+    def __init__(self, nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, email):
+        #Persona.contador_personas += 1
         self._nombre = nombre
         self._apellido = apellido
         self._cedula = cedula
@@ -29,7 +28,7 @@ class Persona:#superclase
         self._telefono = telefono
         self._fecha_nacimiento = fecha_nacimiento
         self._email = email
-        self._id_persona = Persona.contador_personas
+        #self._id_persona = Persona.contador_personas
     
     #def crear_persona(self):
     #    return Persona(self.nombre, self.apellido, self.cedula, self.direccion, self.telefono, self.email, self.fecha_nacimiento)
@@ -116,31 +115,31 @@ class Persona:#superclase
     fecha_nacimiento = property(get_fecha_nacimiento, set_fecha_nacimiento)
     email = property(get_email, set_email)
 
-    def display(self):
-        print("""nombre:{0} - apellido:{1} - cedula:{2} - direccion:{3} -
-                telefono:{4} - fecha_nacimiento:{5} - email:{6} """.format(self._nombre,
-                                                                self._apellido,
-                                                                self._cedula,
-                                                                self._direccion,
-                                                                self._telefono,
-                                                                self._fecha_nacimiento,
-                                                                self._email))
+    # def display(self):
+    #     print("""nombre:{0} - apellido:{1} - cedula:{2} - direccion:{3} -
+    #             telefono:{4} - fecha_nacimiento:{5} - email:{6} """.format(self._nombre,
+    #                                                             self._apellido,
+    #                                                             self._cedula,
+    #                                                             self._direccion,
+    #                                                             self._telefono,
+    #                                                             self._fecha_nacimiento,
+    #                                                             self._email))
 
-    def mostrar_detalle(self):
-        print(f'Persona: {self._tipo} {self._nombre} {self._apellido} {self._cedula}'
-              f'{self._direccion}{self._telefono} {self._fecha_nacimiento} {self._email}')
+    # def mostrar_detalle(self):
+    #     print(f'Persona: {self._tipo} {self._nombre} {self._apellido} {self._cedula}'
+    #           f'{self._direccion}{self._telefono} {self._fecha_nacimiento} {self._email}')
 
-    def __str__(self):
-        return f"""\nPersona:[{self._id_persona}
-        Nombre: {self._nombre} 
-        Apellido: {self._apellido}
-        Cedula: {self._cedula}
-        Direccion: {self._direccion}
-        Telefono: {self._telefono}
-        Fecha de Nacimiento: {self._fecha_nacimiento}
-        Email: {self._email}]
-        """
+    # def __str__(self):
+    #     return f"""\nPersona:[{self._id_persona}
+    #     Nombre: {self._nombre} 
+    #     Apellido: {self._apellido}
+    #     Cedula: {self._cedula}
+    #     Direccion: {self._direccion}
+    #     Telefono: {self._telefono}
+    #     Fecha de Nacimiento: {self._fecha_nacimiento}
+    #     Email: {self._email}]
+    #     """
 
-    def __del__(self):
-        print(f'Persona: {self._tipo} {self._nombre} {self._apellido} {self._cedula}'
-              f'{self._direccion} {self._telefono} {self._fecha_nacimiento} {self._email}')
+    # def __del__(self):
+    #     print(f'Persona: {self._tipo} {self._nombre} {self._apellido} {self._cedula}'
+    #           f'{self._direccion} {self._telefono} {self._fecha_nacimiento} {self._email}')
