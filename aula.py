@@ -8,9 +8,6 @@ class Aula:
         self.__capacidad_asientos = capacidad_asientos
         
 
-        
-    def administrar_Aula(): #Devolvera None
-        pass
 
     def registrar_aula():
         print("Registrar aula\n")
@@ -72,5 +69,29 @@ class Aula:
     numero_piso = property(get_numero_piso, set_numero_piso)
     numero_edificio = property(get_numero_edificio, set_numero_edificio)
     capacidad_asientos = property(get_capacidad_asientos, set_capacidad_asientos)
+
+    def administrar_Aula(): #Devolvera None
+        while (numero <= 4):
+            print("\t MENU")
+            print("1. Registrar nuevas aulas")
+            print("2. Eliminar aulas")
+            print("3. Buscar aulas")
+            print("4. SALIR")
+            numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+
+            if numero==1:
+                print("\t Registrar aulas")
+                Aula.registrar_aula()
+                                    
+            elif numero==2:
+                print("\t Eliminar aulas")
+                Aula.elimninar_aula()
+                                    
+            elif numero==3:
+                print("\t Buscar aula")
+                Aula.buscar_aula()
+                                    
+            elif numero==4:
+                break
 
     
