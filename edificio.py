@@ -65,4 +65,30 @@ class Edificio:
     cantidad_pisos = property(get_cantidad_pisos, set_cantidad_pisos)
     cantidad_aulas = property(get_cantidad_aulas, set_cantidad_aulas)
 
+    def administrar_edificio():
+        numero=0
+        while (numero <= 4):
+            print("\t MENU")
+            print("1. Registrar nuevos edificios")
+            print("2. Eliminar edificios")
+            print("3. Buscar edificios")
+            print("4. SALIR")
+            numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+
+            if numero==1:
+                print("\t Registrar edificios")
+                Edificio.registrar_edificio()
+                                        
+            elif numero==2:
+                print("\t Eliminar edificios")
+                Edificio.elimninar_edificio()
+                                        
+            elif numero==3:
+                print("\t Buscar edificios")
+                Edificio.buscar_edificio()
+                                        
+            elif numero==4:
+                break
+
+
 

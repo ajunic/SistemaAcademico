@@ -1,14 +1,9 @@
-from curso import *
+from mainAdministrar import*
+from mainDocente import* 
+from mainEstudiante import*
 from programa import *
-from Profesor import *
-from edificio import *
-from Estudiante import *
-from aula import *
-from tipoProfesor import *
-from turno import *
-from MenuEstudiante import *
-from MenuProfesor import *
-from MenuCatalogo import *
+
+
 
 # Programa principal
 """Autores:-    
@@ -17,8 +12,8 @@ from MenuCatalogo import *
     -Guillermo Carvajal1
 
     -Michael Gomez
-    -Rodolfo Melendes
-    -Blandino
+    -Manuel Caceres 
+    -Francisco Blandino
     -Armando Ugarte
 
 """
@@ -94,61 +89,33 @@ while (True):
             \n 3 Para Servicios administrativos 
             \n 4 Para Salir""")
     try:
-        option = int(input("Elija su opcion para el menu"))
-        if option == 1:
-            admi_profesor()
-            # while (numero <= 3):
-            #     print("\t MENU")
-            #     print("1. Matricularse:")
-            #     print("2. Mostrar cursos :")
-            #     print("3. Salir")
-            #     numero = int(input("Ingrese el numero de servicios que desea verificar: "))
-            #     # Submenu de matricula
-            #     if numero == 1:
-            #         print("\t MATRICULA")
-            #         while (numero <= 3):
-            #             print("\t MENU")
-            #             print("1. Pagar:")
-            #             print("2. Mostrar informacion cursos:")
-            #             print("3. Salir")
-            #             numero = int(input("Ingrese el numero de servicios que desea verificar: "))
-
-            #             if numero == 1:
-            #                 pass  # metdo para pagar
-            #             elif numero == 2:
-            #                 pass  # metodo para mostrar informacion cursos
-            #             elif numero == 3:
-            #                 break
-
-            #     elif numero == 2:
-            #         print("\t TUS CURSOS:")
-            #         pass  # metodo para mostrar cursos
-
-            #     elif numero == 3:
-            #         break
-            # salto_linea()
-
-            # submenu de servicios estudiante
-        elif option == 2:
-            admi_estudiante()
-            salto_linea()
-    
-
-            # submenu de servicios administrativos
-        elif option == 3:
-            #admi_catalogos()
-            salto_linea()
-            admi_catalogos()
-
-            # salir del menu principal
-        elif option == 4:
-            print("Gracias por usar nuestro sistema")
-            break
+        digito = int(input("Elija su opcion para el menu"))   
     except ValueError as err:
         print(err)
         print("Ingrese de nuevo su opcion")
+        continue
 
         # submenu de sercivios docente
+        #submenu de sercivios docente
+    if digito==1:
+        main_Profesor.menu_verificacion() 
+
+        salto_linea()
+
+    #submenu de servicios estudiante
+    elif digito==2:
+        main_Estudiante.menu_matricula()
+    
+        salto_linea()        
+    #submenu de servicios administrativos        
+    elif digito==3:
+        main_Administrar_cat.menu_Administracion()
+
+        salto_linea()        
+    elif digito==4:
+        
+        print("Gracias por usar nuestro sistema")
+        break
 
 
 # _______________________________________________________________________________

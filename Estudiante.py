@@ -1,5 +1,6 @@
 from Persona import Persona
-# from testAnalytics import *
+#from testAnalytics import *
+from curso import Curso
 
 class Estudiante(Persona):
 
@@ -75,7 +76,20 @@ class Estudiante(Persona):
     #     Estudiante.listaEstudiantes[:numi] = [modi]
     #     print(Estudiante.listaEstudiantes)
 
+    def elimninar_estudiante():
+        print("Eliminar Estudiante\n")
+        borrar = input("Escriba el nombre del estudiante que desea eliminar: ")
+        bo = Estudiante.listaEstudiantes.pop(borrar)
+        print("-------------------")
+        print("------------------------")
+        print("Se ha eliminado con exito")
 
+    def __gt__(self, other):
+        """Comparamos nota para aplicar descuento o no"""
+        precio_descuento= 0
+        if other.__nota > 90:
+            precio_descuento = 0.9* other.__precio
+            return print (f'El precio con descuento es: {precio_descuento}')
 
     # define setter and getter methods for Estudiante attributes
     def get_num_carnet(self):

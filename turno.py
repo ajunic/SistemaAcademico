@@ -41,3 +41,35 @@ class Turno:
 # fff = Tipo_profesor("Horario")
 # p = Turno("Matutino", fff)
 # print(p)
+    def get_turno(self):
+        return self.__turno
+
+    def set_turno(self, turno):
+        self.__turno = turno
+
+    turno = property(get_turno, set_turno)
+
+    def administrar_turno():
+        numero=0
+        while (numero <= 4):
+            print("\t MENU")
+            print("1. Registrar nuevos turnos")
+            print("2. Eliminar turnos")
+            print("3. Buscar turnos")
+            print("4. SALIR")
+            numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+
+            if numero==1:
+                print("\t Registrar nuevo turno")
+                Turno.registrar_turno()
+                                        
+            elif numero==2:
+                print("\t Eliminar turno")
+                Turno.elimninar_turno()
+                                        
+            elif numero==3:
+                print("\t Buscar turno")
+                Turno.buscar_turno()
+                                        
+            elif numero==4:
+                break

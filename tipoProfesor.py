@@ -51,3 +51,28 @@ class Tipo_profesor:
         self._tipo_profesor = tipo_profesor
 
     tipo_profesor = property(get_tipo_profesor, set_tipo_profesor)
+
+    def administrar_tipo_profesor():
+        numero=0
+        while (numero <= 4):
+            print("\t MENU")
+            print("1. Registrar nuevos tipos de profesores")
+            print("2. Eliminar tipo de profesor")
+            print("3. Buscar tipo de profesor")
+            print("4. SALIR")
+            numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+
+            if numero==1:
+                print("\t Registrar nuevo tipo de profesor")
+                Tipo_profesor.registrar_tipo_profesor()
+                                    
+            elif numero==2:
+                print("\t Eliminar tipo de profesor")
+                Tipo_profesor.elimninar_tipo_profesor()
+                                    
+            elif numero==3:
+                print("\t Buscar tipo de profesor")
+                Tipo_profesor.buscar_tipo_profesor()
+                                    
+            elif numero==4:
+                break

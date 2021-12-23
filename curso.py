@@ -140,4 +140,28 @@ class Curso:
             print(i)
 
     def administrar_Curso(): #Devolvera None
-        pass
+        numero = 0
+        while (numero <= 4):
+            print("\t MENU")
+            print("1. Registrar nuevos cursos")
+            print("2. Eliminar cursos")
+            print("3. Buscar cursos")
+            print("4. SALIR")
+            numero=int(input("Ingrese el numero de servicios que desea verificar: "))
+
+            if numero==1:
+                print("\t Registrar cursos")
+                Curso.crear_curso()
+                                    
+            elif numero==2:
+                print("\t Eliminar cursos")
+                Curso.eliminar_curso
+                                    
+            elif numero==3:
+                print("\t Buscar cursos")
+                Curso.buscar_curso()
+                                    
+            elif numero==4:
+                break
+
+
